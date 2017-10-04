@@ -9,20 +9,34 @@
 import UIKit
 
 
+protocol FeedViewControllerDelegate: class {
+    
+    func didTriggerRefresh(in viewController: FeedViewController)
+}
+
+
 class FeedViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: Outlets and Views
 
     @IBOutlet weak var collectionView: UICollectionView? {
         didSet {
             collectionView?.register(PhotoThumbnailCell.self, forCellWithReuseIdentifier: PhotoThumbnailCell.reuseIdentifier)
+            collectionView?.addSubview(refreshControl)
         }
     }
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(refreshTriggered), for: .valueChanged)
+        return refresh
+    }()
     
     
     // MARK: Properties
 
     let animated: Bool
+    weak var delegate: FeedViewControllerDelegate?
     private(set) var photos: [PhotoDisplayable] = []
     
     
@@ -45,9 +59,23 @@ class FeedViewController: UIViewController {
         
         navigationItem.title = NSLocalizedString("Public Flickr Feed", comment: "")
     }
-    
+
     
     // MARK: Public
+    
+    func set(isRefreshing: Bool) {
+        if isRefreshing {
+            loadViewIfNeeded()
+            refreshControl.beginRefreshing()
+            if photos.isEmpty {
+                let offset = CGPoint(x: 0, y: -refreshControl.bounds.height)
+                collectionView?.setContentOffset(offset, animated: true)
+            }
+        }
+        else {
+            refreshControl.endRefreshing()
+        }
+    }
     
     func set(photos: [PhotoDisplayable]) {
         self.photos = photos
@@ -58,6 +86,13 @@ class FeedViewController: UIViewController {
         // NOTE: In a production app, we would likely want to display errors in an inline
         // view rather than presenting an alert with the message.
         presentOkAlert(message: error.message)
+    }
+    
+    
+    // MARK: Actions
+    
+    @objc func refreshTriggered() {
+        delegate?.didTriggerRefresh(in: self)
     }
 }
 

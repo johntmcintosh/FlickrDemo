@@ -29,6 +29,6 @@ extension UIImageView: ImageViewTestable {
             return
         }
         
-        af_setImage(withURL: url, imageTransition: .crossDissolve(0.3))
+        af_setImage(withURL: url, placeholderImage: UIImage(), imageTransition: .crossDissolve(0.3))
     }
 }

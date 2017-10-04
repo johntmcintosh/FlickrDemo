@@ -21,6 +21,7 @@ class PublicFeedCoordinator {
     
     lazy var feedVC: FeedViewController = {
         let vc = FeedViewController()
+        vc.delegate = self
         return vc
     }()
     
@@ -41,7 +42,9 @@ class PublicFeedCoordinator {
     }
     
     func fetchPublicFeed(completion: (() -> ())? = nil) {
+        feedVC.set(isRefreshing: true)
         feedService.fetchPublicFeed { result in
+            self.feedVC.set(isRefreshing: false)
             switch result {
             case .success(let photos):
                 self.feedVC.set(photos: photos)
@@ -51,5 +54,13 @@ class PublicFeedCoordinator {
                 completion?()
             }
         }
+    }
+}
+
+
+extension PublicFeedCoordinator: FeedViewControllerDelegate {
+    
+    func didTriggerRefresh(in viewController: FeedViewController) {
+        fetchPublicFeed()
     }
 }
