@@ -23,8 +23,8 @@ class PublicFeedService {
         server.get(to: Endpoint.Feeds.publicPhotos, parameters: nil) { result in
             switch result {
             case .success(let response):
-                // TODO: Implement response parsing
-                completion(.success([]))
+                let photos = response.json["items"].arrayValueForType(Photo.self) ?? []
+                completion(.success(photos))
             case .failure(let error):
                 completion(.failure(error))
             }

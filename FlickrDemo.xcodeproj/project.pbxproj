@@ -18,6 +18,11 @@
 		5B278E781F846263003E307B /* PublicFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B278E771F846263003E307B /* PublicFeedService.swift */; };
 		5B278E7A1F84626F003E307B /* PublicFeedServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B278E791F84626F003E307B /* PublicFeedServiceTests.swift */; };
 		5B278E7B1F846BC5003E307B /* LocalServerTests in Resources */ = {isa = PBXBuildFile; fileRef = 5B278E701F84611A003E307B /* LocalServerTests */; };
+		5B278E7E1F8471CC003E307B /* JSONInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B278E7D1F8471CC003E307B /* JSONInstantiable.swift */; };
+		5B278E811F847335003E307B /* SwiftyJSON+Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B278E801F847335003E307B /* SwiftyJSON+Flickr.swift */; };
+		5B278E831F8475FD003E307B /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B278E821F8475FD003E307B /* Typealiases.swift */; };
+		5B278E851F847794003E307B /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B278E841F847794003E307B /* PhotoTests.swift */; };
+		5B278E871F8477E9003E307B /* XCTestCase+Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B278E861F8477E9003E307B /* XCTestCase+Flickr.swift */; };
 		5BB4B1D21F831A3700C71FE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D11F831A3700C71FE3 /* AppDelegate.swift */; };
 		5BB4B1D41F831A3700C71FE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D31F831A3700C71FE3 /* ViewController.swift */; };
 		5BB4B1D71F831A3700C71FE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D51F831A3700C71FE3 /* Main.storyboard */; };
@@ -47,6 +52,11 @@
 		5B278E741F846210003E307B /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		5B278E771F846263003E307B /* PublicFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFeedService.swift; sourceTree = "<group>"; };
 		5B278E791F84626F003E307B /* PublicFeedServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFeedServiceTests.swift; sourceTree = "<group>"; };
+		5B278E7D1F8471CC003E307B /* JSONInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONInstantiable.swift; sourceTree = "<group>"; };
+		5B278E801F847335003E307B /* SwiftyJSON+Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftyJSON+Flickr.swift"; sourceTree = "<group>"; };
+		5B278E821F8475FD003E307B /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		5B278E841F847794003E307B /* PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
+		5B278E861F8477E9003E307B /* XCTestCase+Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Flickr.swift"; sourceTree = "<group>"; };
 		5BB4B1CE1F831A3700C71FE3 /* FlickrDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB4B1D11F831A3700C71FE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BB4B1D31F831A3700C71FE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +104,8 @@
 		5B278E631F831E00003E307B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5B278E7F1F84731F003E307B /* Extensions */,
+				5B278E7C1F8471BF003E307B /* Model */,
 				5B278E641F831E09003E307B /* Networking */,
 			);
 			path = Common;
@@ -132,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				5B278E741F846210003E307B /* Photo.swift */,
+				5B278E841F847794003E307B /* PhotoTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +156,23 @@
 				5B278E791F84626F003E307B /* PublicFeedServiceTests.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		5B278E7C1F8471BF003E307B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B278E7D1F8471CC003E307B /* JSONInstantiable.swift */,
+				5B278E821F8475FD003E307B /* Typealiases.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B278E7F1F84731F003E307B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B278E801F847335003E307B /* SwiftyJSON+Flickr.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		5BB4B1C51F831A3700C71FE3 = {
@@ -184,6 +214,7 @@
 			children = (
 				5B278E701F84611A003E307B /* LocalServerTests */,
 				5BB4B1E81F831A3700C71FE3 /* Info.plist */,
+				5B278E861F8477E9003E307B /* XCTestCase+Flickr.swift */,
 			);
 			path = FlickrDemoTests;
 			sourceTree = "<group>";
@@ -423,8 +454,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B278E751F846210003E307B /* Photo.swift in Sources */,
+				5B278E7E1F8471CC003E307B /* JSONInstantiable.swift in Sources */,
+				5B278E831F8475FD003E307B /* Typealiases.swift in Sources */,
 				5BB4B1D41F831A3700C71FE3 /* ViewController.swift in Sources */,
 				5B278E661F831E14003E307B /* Server.swift in Sources */,
+				5B278E811F847335003E307B /* SwiftyJSON+Flickr.swift in Sources */,
 				5B278E681F831E21003E307B /* DefaultServer.swift in Sources */,
 				5B278E781F846263003E307B /* PublicFeedService.swift in Sources */,
 				5BB4B1D21F831A3700C71FE3 /* AppDelegate.swift in Sources */,
@@ -436,7 +470,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B278E851F847794003E307B /* PhotoTests.swift in Sources */,
 				5B278E7A1F84626F003E307B /* PublicFeedServiceTests.swift in Sources */,
+				5B278E871F8477E9003E307B /* XCTestCase+Flickr.swift in Sources */,
 				5B278E6F1F846019003E307B /* MockServer.swift in Sources */,
 				5B278E6A1F831E2C003E307B /* DefaultServerTests.swift in Sources */,
 			);

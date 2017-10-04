@@ -37,8 +37,7 @@ class PublicFeedServiceTests: XCTestCase {
         let expectation = self.expectation(description: "Completion expectation")
         service.fetchPublicFeed() { result in
             let events = try! result.dematerialize()
-            // TODO: zero is only correct until parsing is implemented
-            XCTAssertEqual(events.count, 0)
+            XCTAssertEqual(events.count, 20)
             expectation.fulfill()
         }
         waitForExpectations(timeout: 1.0)
