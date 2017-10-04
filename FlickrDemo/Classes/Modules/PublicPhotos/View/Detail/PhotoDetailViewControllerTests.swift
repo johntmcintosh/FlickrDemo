@@ -19,14 +19,14 @@ class PhotoDetailViewControllerTests: SnapshotKitTestCase {
     }
     
     func testLandscapePhotoLoaded() {
-        let photo = MockPhoto(title: "Basic photo title", imageName: "sample-photo-landscape")
+        let photo = MockPhoto(title: "Basic photo title", imageName: "sample-photo-landscape.jpg")
         let vc = PhotoDetailViewController(photo: photo, animated: false)
         
         snapshot.simulator().verify(vc)
     }
 
     func testPortraitPhotoLoaded() {
-        let photo = MockPhoto(title: "Basic photo title", imageName: "sample-photo-portrait")
+        let photo = MockPhoto(title: "Basic photo title", imageName: "sample-photo-portrait.jpg")
         let vc = PhotoDetailViewController(photo: photo, animated: false)
         
         snapshot.simulator().verify(vc)
@@ -45,8 +45,7 @@ private struct MockPhoto: PhotoDisplayable {
     var imageName: String
     
     var large: URL {
-        let bundle = Bundle(for: MockServer.self)
-        return bundle.url(forResource: imageName, withExtension: "jpg", subdirectory: "LocalServerTests")!
+        return URL(testImageNamed: imageName)!
     }
     
     var date: Date {
