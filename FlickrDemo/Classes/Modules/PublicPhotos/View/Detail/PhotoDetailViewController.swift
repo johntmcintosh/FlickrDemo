@@ -6,6 +6,7 @@
 //  Copyright © 2017 John T McIntosh. All rights reserved.
 //
 
+import AlamofireImage
 import UIKit
 
 
@@ -20,9 +21,12 @@ class PhotoDetailViewController: UIViewController {
                 imageView.image = UIImage(data: data)
                 return
             }
+            imageView.af_setImage(withURL: photo.large, imageTransition: .crossDissolve(0.3))
         }
     }
+    
     @IBOutlet weak var titleContainer: UIView!
+    
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = photo.title
