@@ -13,9 +13,9 @@ class FeedViewController: UIViewController {
     
     // MARK: Outlets
 
-    @IBOutlet weak var collectionView: UICollectionView! {
+    @IBOutlet weak var collectionView: UICollectionView? {
         didSet {
-            collectionView.register(PhotoThumbnailCell.self, forCellWithReuseIdentifier: PhotoThumbnailCell.reuseIdentifier)
+            collectionView?.register(PhotoThumbnailCell.self, forCellWithReuseIdentifier: PhotoThumbnailCell.reuseIdentifier)
         }
     }
     
@@ -23,7 +23,7 @@ class FeedViewController: UIViewController {
     // MARK: Properties
 
     let animated: Bool
-    var photos: [PhotoDisplayable] = []
+    private(set) var photos: [PhotoDisplayable] = []
     
     
     // MARK: Initializers
@@ -45,6 +45,20 @@ class FeedViewController: UIViewController {
         
         navigationItem.title = NSLocalizedString("Public Flickr Feed", comment: "")
     }
+    
+    
+    // MARK: Public
+    
+    func set(photos: [PhotoDisplayable]) {
+        self.photos = photos
+        collectionView?.reloadData()
+    }
+    
+    func show(error: ServerError) {
+        // NOTE: In a production app, we would likely want to display errors in an inline
+        // view rather than presenting an alert with the message.
+        presentOkAlert(message: error.message)
+    }
 }
 
 
@@ -61,7 +75,6 @@ extension FeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoThumbnailCell.reuseIdentifier, for: indexPath) as! PhotoThumbnailCell
         
-        cell.contentView.backgroundColor = .green
         let photo = photos[indexPath.row]
         cell.imageView.setImage(withURL: photo.thumbnail, asynchronous: animated)
         
@@ -72,4 +85,5 @@ extension FeedViewController: UICollectionViewDataSource {
 
 extension FeedViewController: UICollectionViewDelegate {
     
+    // TODO: Selection action
 }

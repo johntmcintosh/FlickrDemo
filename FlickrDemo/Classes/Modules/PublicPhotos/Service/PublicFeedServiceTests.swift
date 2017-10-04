@@ -22,7 +22,7 @@ class PublicFeedServiceTests: XCTestCase {
         service = PublicFeedService(server: server)
     }
     
-    func testFetchEvents_request() {
+    func testFetch_request() {
         let expectation = self.expectation(description: "Completion expectation")
         service.fetchPublicFeed() { result in
             self.server.assertLastRequestEquals(Endpoint.Feeds.publicPhotos)
@@ -31,19 +31,19 @@ class PublicFeedServiceTests: XCTestCase {
         waitForExpectations(timeout: 1.0)
     }
     
-    func testFetchEvents_responseSuccess() {
+    func testFetch_responseSuccess() {
         server.queueNextResponse(localTestFile: "services.feeds.photos_public.gne...success.json")
         
         let expectation = self.expectation(description: "Completion expectation")
         service.fetchPublicFeed() { result in
-            let events = try! result.dematerialize()
-            XCTAssertEqual(events.count, 20)
+            let items = try! result.dematerialize()
+            XCTAssertEqual(items.count, 20)
             expectation.fulfill()
         }
         waitForExpectations(timeout: 1.0)
     }
     
-    func testFetchEvents_responseError() {
+    func testFetch_responseError() {
         server.nextResponse = .failure(ServerError("error message"))
         
         let expectation = self.expectation(description: "Completion expectation")

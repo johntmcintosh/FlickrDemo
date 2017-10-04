@@ -32,23 +32,3 @@ class PhotoDetailViewControllerTests: SnapshotKitTestCase {
         snapshot.simulator().verify(vc)
     }
 }
-
-
-private struct MockPhoto: PhotoDisplayable {
-    
-    var title: String
-    
-    var thumbnail: URL {
-        return large
-    }
-    
-    var imageName: String
-    
-    var large: URL {
-        return URL(testImageNamed: imageName)!
-    }
-    
-    var date: Date {
-        return Date(timeIntervalSince1970: 0)
-    }
-}

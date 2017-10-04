@@ -10,16 +10,21 @@ import Foundation
 import Result
 
 
+protocol PublicFeedServicing {
+    func fetchPublicFeed(completion: @escaping (Result<[PhotoDisplayable], ServerError>) -> ())
+}
+
+
 /// Service object for fetching photos from the public feed.
-class PublicFeedService {
+class PublicFeedService: PublicFeedServicing {
     
     let server: Server
     
-    init(server: Server) {
+    init(server: Server = DefaultServer()) {
         self.server = server
     }
     
-    func fetchPublicFeed(completion: @escaping (Result<[FlickrPhoto], ServerError>) -> ()) {
+    func fetchPublicFeed(completion: @escaping (Result<[PhotoDisplayable], ServerError>) -> ()) {
         server.get(to: Endpoint.Feeds.publicPhotos, parameters: nil) { result in
             switch result {
             case .success(let response):

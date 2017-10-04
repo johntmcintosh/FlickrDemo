@@ -37,6 +37,8 @@ class PhotoThumbnailCell: UICollectionViewCell {
     }
     
     func commonInit() {
+        contentView.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
+        
         imageView.frame = contentView.bounds
         imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentView.addSubview(imageView)
