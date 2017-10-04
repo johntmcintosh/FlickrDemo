@@ -26,6 +26,8 @@
 		5B278E831F8475FD003E307B /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B278E821F8475FD003E307B /* Typealiases.swift */; };
 		5B278E851F847794003E307B /* FlickrPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B278E841F847794003E307B /* FlickrPhotoTests.swift */; };
 		5B278E871F8477E9003E307B /* XCTestCase+Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B278E861F8477E9003E307B /* XCTestCase+Flickr.swift */; };
+		5B2A1D131F8487D300C2C2EE /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A1D121F8487D300C2C2EE /* PhotoDetailViewController.swift */; };
+		5B2A1D151F8487E500C2C2EE /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B2A1D141F8487E500C2C2EE /* PhotoDetailViewController.xib */; };
 		5BB4B1D21F831A3700C71FE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D11F831A3700C71FE3 /* AppDelegate.swift */; };
 		5BB4B1D41F831A3700C71FE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D31F831A3700C71FE3 /* ViewController.swift */; };
 		5BB4B1D71F831A3700C71FE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D51F831A3700C71FE3 /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 		5B278E821F8475FD003E307B /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		5B278E841F847794003E307B /* FlickrPhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoTests.swift; sourceTree = "<group>"; };
 		5B278E861F8477E9003E307B /* XCTestCase+Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Flickr.swift"; sourceTree = "<group>"; };
+		5B2A1D121F8487D300C2C2EE /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		5B2A1D141F8487E500C2C2EE /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
 		5BB4B1CE1F831A3700C71FE3 /* FlickrDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB4B1D11F831A3700C71FE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BB4B1D31F831A3700C71FE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 			children = (
 				5B278E761F846250003E307B /* Service */,
 				5B278E731F846207003E307B /* Model */,
+				5B2A1D101F84877600C2C2EE /* View */,
 			);
 			path = PublicPhotos;
 			sourceTree = "<group>";
@@ -182,6 +187,23 @@
 				5B278E801F847335003E307B /* SwiftyJSON+Flickr.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5B2A1D101F84877600C2C2EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B2A1D111F84877D00C2C2EE /* Detail */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B2A1D111F84877D00C2C2EE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5B2A1D121F8487D300C2C2EE /* PhotoDetailViewController.swift */,
+				5B2A1D141F8487E500C2C2EE /* PhotoDetailViewController.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		5BB4B1C51F831A3700C71FE3 = {
@@ -339,6 +361,7 @@
 			files = (
 				5BB4B1DC1F831A3700C71FE3 /* LaunchScreen.storyboard in Resources */,
 				5BB4B1D91F831A3700C71FE3 /* Assets.xcassets in Resources */,
+				5B2A1D151F8487E500C2C2EE /* PhotoDetailViewController.xib in Resources */,
 				5BB4B1D71F831A3700C71FE3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +490,7 @@
 				5B278E831F8475FD003E307B /* Typealiases.swift in Sources */,
 				5BB4B1D41F831A3700C71FE3 /* ViewController.swift in Sources */,
 				5B278E661F831E14003E307B /* Server.swift in Sources */,
+				5B2A1D131F8487D300C2C2EE /* PhotoDetailViewController.swift in Sources */,
 				5B1A00541F847D9B00C08903 /* PhotoDisplayable.swift in Sources */,
 				5B1A00551F847DA100C08903 /* FlickrPhoto+PhotoDisplayable.swift in Sources */,
 				5B278E811F847335003E307B /* SwiftyJSON+Flickr.swift in Sources */,
