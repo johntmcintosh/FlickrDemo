@@ -1,5 +1,5 @@
 //
-//  PhotoTests.swift
+//  FlickrPhotoTests.swift
 //  FlickrDemoTests
 //
 //  Created by John McIntosh on 10/3/17.
@@ -11,11 +11,11 @@ import SwiftyJSON
 import XCTest
 
 
-class PhotoTests: XCTestCase {
+class FlickrPhotoTests: XCTestCase {
     
     func testPhotoParsing_valid() {
         let json = jsonFromTestFile("services.feeds.photos_public.gne...success[photo].json")
-        let photo = Photo(json: json)!
+        let photo = FlickrPhoto(json: json)!
         
         let dateFormatter = ISO8601DateFormatter()
         

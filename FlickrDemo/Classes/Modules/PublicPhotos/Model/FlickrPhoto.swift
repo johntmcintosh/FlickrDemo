@@ -1,5 +1,5 @@
 //
-//  Photo.swift
+//  FlickrPhoto.swift
 //  FlickrDemo
 //
 //  Created by John McIntosh on 10/3/17.
@@ -11,7 +11,7 @@ import SwiftyJSON
 
 
 /// Model representation of a photo from the Flickr API.
-struct Photo {
+struct FlickrPhoto {
     
     var title: String
     var link: URL
@@ -28,7 +28,7 @@ struct Photo {
 // NOTE: As of Swift 4, I would replace this `JSONInstantiable` pattern with the now-system-provided Codable
 // protocol. However, I haven't had a chance yet to work with that pattern, so I'm using the pattern I have
 // traditionally used for now.
-extension Photo: JSONInstantiable {
+extension FlickrPhoto: JSONInstantiable {
 
     init?(json: JSON) {
         guard let title = json["title"].string,

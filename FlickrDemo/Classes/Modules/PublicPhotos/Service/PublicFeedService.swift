@@ -19,11 +19,11 @@ class PublicFeedService {
         self.server = server
     }
     
-    func fetchPublicFeed(completion: @escaping (Result<[Photo], ServerError>) -> ()) {
+    func fetchPublicFeed(completion: @escaping (Result<[FlickrPhoto], ServerError>) -> ()) {
         server.get(to: Endpoint.Feeds.publicPhotos, parameters: nil) { result in
             switch result {
             case .success(let response):
-                let photos = response.json["items"].arrayValueForType(Photo.self) ?? []
+                let photos = response.json["items"].arrayValueForType(FlickrPhoto.self) ?? []
                 completion(.success(photos))
             case .failure(let error):
                 completion(.failure(error))
