@@ -11,11 +11,15 @@ import UIKit
 
 class PhotoThumbnailCell: UICollectionViewCell {
     
+    static let reuseIdentifier = "PhotoThumbnailCell"
+    
+    
     // MARK: Properties
     
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     

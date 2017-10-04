@@ -34,9 +34,12 @@
 		5B7FDCFD1F85887600831B61 /* UIImage+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDCFC1F85887600831B61 /* UIImage+Tests.swift */; };
 		5B7FDCFF1F85889900831B61 /* URL+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDCFE1F85889900831B61 /* URL+Tests.swift */; };
 		5B7FDD011F8588D000831B61 /* MockTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDD001F8588D000831B61 /* MockTestClass.swift */; };
+		5B7FDD031F858B6D00831B61 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDD021F858B6D00831B61 /* FeedViewController.swift */; };
+		5B7FDD051F858B8300831B61 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7FDD041F858B8300831B61 /* FeedViewController.xib */; };
+		5B7FDD071F858C5100831B61 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDD061F858C5100831B61 /* FeedViewControllerTests.swift */; };
+		5B7FDD0A1F858E4900831B61 /* ImageViewTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDD091F858E4900831B61 /* ImageViewTestable.swift */; };
+		5B7FDD0C1F85904700831B61 /* FeedGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDD0B1F85904700831B61 /* FeedGridLayout.swift */; };
 		5BB4B1D21F831A3700C71FE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D11F831A3700C71FE3 /* AppDelegate.swift */; };
-		5BB4B1D41F831A3700C71FE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D31F831A3700C71FE3 /* ViewController.swift */; };
-		5BB4B1D71F831A3700C71FE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D51F831A3700C71FE3 /* Main.storyboard */; };
 		5BB4B1D91F831A3700C71FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D81F831A3700C71FE3 /* Assets.xcassets */; };
 		5BB4B1DC1F831A3700C71FE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB4B1DA1F831A3700C71FE3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -79,10 +82,13 @@
 		5B7FDCFC1F85887600831B61 /* UIImage+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Tests.swift"; sourceTree = "<group>"; };
 		5B7FDCFE1F85889900831B61 /* URL+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Tests.swift"; sourceTree = "<group>"; };
 		5B7FDD001F8588D000831B61 /* MockTestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTestClass.swift; sourceTree = "<group>"; };
+		5B7FDD021F858B6D00831B61 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		5B7FDD041F858B8300831B61 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		5B7FDD061F858C5100831B61 /* FeedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerTests.swift; sourceTree = "<group>"; };
+		5B7FDD091F858E4900831B61 /* ImageViewTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewTestable.swift; sourceTree = "<group>"; };
+		5B7FDD0B1F85904700831B61 /* FeedGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedGridLayout.swift; sourceTree = "<group>"; };
 		5BB4B1CE1F831A3700C71FE3 /* FlickrDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB4B1D11F831A3700C71FE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BB4B1D31F831A3700C71FE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5BB4B1D61F831A3700C71FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BB4B1D81F831A3700C71FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BB4B1DB1F831A3700C71FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BB4B1DD1F831A3700C71FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 				5B278E7F1F84731F003E307B /* Extensions */,
 				5B278E7C1F8471BF003E307B /* Model */,
 				5B278E641F831E09003E307B /* Networking */,
+				5B7FDD081F858E1E00831B61 /* View */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -223,10 +230,22 @@
 		5B7FDCF71F85870700831B61 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				5B7FDD021F858B6D00831B61 /* FeedViewController.swift */,
+				5B7FDD041F858B8300831B61 /* FeedViewController.xib */,
+				5B7FDD061F858C5100831B61 /* FeedViewControllerTests.swift */,
+				5B7FDD0B1F85904700831B61 /* FeedGridLayout.swift */,
 				5B7FDCF81F85871C00831B61 /* PhotoThumbnailCell.swift */,
 				5B7FDCFA1F8587E100831B61 /* PhotoThumbnailCellTests.swift */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		5B7FDD081F858E1E00831B61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B7FDD091F858E4900831B61 /* ImageViewTestable.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5BB4B1C51F831A3700C71FE3 = {
@@ -254,8 +273,6 @@
 			children = (
 				5B278E621F831DF7003E307B /* Classes */,
 				5BB4B1D11F831A3700C71FE3 /* AppDelegate.swift */,
-				5BB4B1D31F831A3700C71FE3 /* ViewController.swift */,
-				5BB4B1D51F831A3700C71FE3 /* Main.storyboard */,
 				5BB4B1D81F831A3700C71FE3 /* Assets.xcassets */,
 				5BB4B1DA1F831A3700C71FE3 /* LaunchScreen.storyboard */,
 				5BB4B1DD1F831A3700C71FE3 /* Info.plist */,
@@ -386,9 +403,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BB4B1DC1F831A3700C71FE3 /* LaunchScreen.storyboard in Resources */,
+				5B7FDD051F858B8300831B61 /* FeedViewController.xib in Resources */,
 				5BB4B1D91F831A3700C71FE3 /* Assets.xcassets in Resources */,
 				5B2A1D151F8487E500C2C2EE /* PhotoDetailViewController.xib in Resources */,
-				5BB4B1D71F831A3700C71FE3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,9 +541,11 @@
 				5B7FDCF91F85871C00831B61 /* PhotoThumbnailCell.swift in Sources */,
 				5B278E7E1F8471CC003E307B /* JSONInstantiable.swift in Sources */,
 				5B278E831F8475FD003E307B /* Typealiases.swift in Sources */,
-				5BB4B1D41F831A3700C71FE3 /* ViewController.swift in Sources */,
+				5B7FDD0A1F858E4900831B61 /* ImageViewTestable.swift in Sources */,
 				5B278E661F831E14003E307B /* Server.swift in Sources */,
 				5B2A1D131F8487D300C2C2EE /* PhotoDetailViewController.swift in Sources */,
+				5B7FDD0C1F85904700831B61 /* FeedGridLayout.swift in Sources */,
+				5B7FDD031F858B6D00831B61 /* FeedViewController.swift in Sources */,
 				5B1A00541F847D9B00C08903 /* PhotoDisplayable.swift in Sources */,
 				5B1A00551F847DA100C08903 /* FlickrPhoto+PhotoDisplayable.swift in Sources */,
 				5B278E811F847335003E307B /* SwiftyJSON+Flickr.swift in Sources */,
@@ -551,6 +570,7 @@
 				5B278E871F8477E9003E307B /* XCTestCase+Flickr.swift in Sources */,
 				5B278E6F1F846019003E307B /* MockServer.swift in Sources */,
 				5B278E6A1F831E2C003E307B /* DefaultServerTests.swift in Sources */,
+				5B7FDD071F858C5100831B61 /* FeedViewControllerTests.swift in Sources */,
 				5B2A1D171F848CD300C2C2EE /* PhotoDetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,14 +586,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5BB4B1D51F831A3700C71FE3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5BB4B1D61F831A3700C71FE3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5BB4B1DA1F831A3700C71FE3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

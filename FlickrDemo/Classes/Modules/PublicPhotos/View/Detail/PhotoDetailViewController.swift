@@ -16,12 +16,7 @@ class PhotoDetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
-            guard animated else {
-                guard let data = try? Data(contentsOf: photo.large) else { return }
-                imageView.image = UIImage(data: data)
-                return
-            }
-            imageView.af_setImage(withURL: photo.large, imageTransition: .crossDissolve(0.3))
+            imageView.setImage(withURL: photo.large, asynchronous: animated)
         }
     }
     
