@@ -20,14 +20,14 @@ class PhotoDetailViewControllerTests: SnapshotKitTestCase {
     
     func testLandscapePhotoLoaded() {
         let photo = MockPhoto(title: "Basic photo title", imageName: "sample-photo-landscape.jpg")
-        let vc = PhotoDetailViewController(photo: photo, animated: false)
+        let vc = PhotoDetailViewController(photo: photo, viewConfig: .mock())
         
         snapshot.simulator().verify(vc)
     }
 
     func testPortraitPhotoLoaded() {
         let photo = MockPhoto(title: "Basic photo title", imageName: "sample-photo-portrait.jpg")
-        let vc = PhotoDetailViewController(photo: photo, animated: false)
+        let vc = PhotoDetailViewController(photo: photo, viewConfig: .mock())
         
         snapshot.simulator().verify(vc)
     }

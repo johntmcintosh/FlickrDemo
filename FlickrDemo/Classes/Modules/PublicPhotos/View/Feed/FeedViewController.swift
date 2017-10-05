@@ -36,15 +36,15 @@ class FeedViewController: UIViewController {
     
     // MARK: Properties
 
-    let animated: Bool
+    let viewConfig: ViewConfig
     weak var delegate: FeedViewControllerDelegate?
     private(set) var photos: [PhotoDisplayable] = []
     
     
     // MARK: Initializers
     
-    init(animated: Bool = true) {
-        self.animated = animated
+    init(viewConfig: ViewConfig = .standard()) {
+        self.viewConfig = viewConfig
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -71,7 +71,7 @@ class FeedViewController: UIViewController {
             refreshControl.beginRefreshing()
             if photos.isEmpty {
                 let offset = CGPoint(x: 0, y: -refreshControl.bounds.height)
-                collectionView?.setContentOffset(offset, animated: true)
+                collectionView?.setContentOffset(offset, animated: viewConfig.animated)
             }
         }
         else {
@@ -113,7 +113,7 @@ extension FeedViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoThumbnailCell.reuseIdentifier, for: indexPath) as! PhotoThumbnailCell
         
         let photo = photos[indexPath.row]
-        cell.imageView.setImage(withURL: photo.thumbnail, asynchronous: animated)
+        cell.imageView.setImage(withURL: photo.thumbnail, asynchronous: viewConfig.animated)
         
         return cell
     }

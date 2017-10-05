@@ -43,6 +43,8 @@
 		5B7FDD111F85996200831B61 /* PublicFeedCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDD101F85996200831B61 /* PublicFeedCoordinatorTests.swift */; };
 		5B7FDD131F859CB700831B61 /* MockPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDD121F859CB700831B61 /* MockPhoto.swift */; };
 		5B7FDD151F85A06400831B61 /* UIViewController+Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDD141F85A06300831B61 /* UIViewController+Flickr.swift */; };
+		5B7FDD171F85BBBD00831B61 /* ViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDD161F85BBBD00831B61 /* ViewConfig.swift */; };
+		5B7FDD191F85BC9D00831B61 /* ViewConfig+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7FDD181F85BC9C00831B61 /* ViewConfig+Tests.swift */; };
 		5BB4B1D21F831A3700C71FE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D11F831A3700C71FE3 /* AppDelegate.swift */; };
 		5BB4B1D91F831A3700C71FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BB4B1D81F831A3700C71FE3 /* Assets.xcassets */; };
 		5BB4B1DC1F831A3700C71FE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB4B1DA1F831A3700C71FE3 /* LaunchScreen.storyboard */; };
@@ -95,6 +97,8 @@
 		5B7FDD101F85996200831B61 /* PublicFeedCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFeedCoordinatorTests.swift; sourceTree = "<group>"; };
 		5B7FDD121F859CB700831B61 /* MockPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhoto.swift; sourceTree = "<group>"; };
 		5B7FDD141F85A06300831B61 /* UIViewController+Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Flickr.swift"; sourceTree = "<group>"; };
+		5B7FDD161F85BBBD00831B61 /* ViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfig.swift; sourceTree = "<group>"; };
+		5B7FDD181F85BC9C00831B61 /* ViewConfig+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewConfig+Tests.swift"; sourceTree = "<group>"; };
 		5BB4B1CE1F831A3700C71FE3 /* FlickrDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB4B1D11F831A3700C71FE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BB4B1D81F831A3700C71FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			children = (
 				5B278E7D1F8471CC003E307B /* JSONInstantiable.swift */,
 				5B278E821F8475FD003E307B /* Typealiases.swift */,
+				5B7FDD161F85BBBD00831B61 /* ViewConfig.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				5B7FDCFE1F85889900831B61 /* URL+Tests.swift */,
 				5B7FDD001F8588D000831B61 /* MockTestClass.swift */,
 				5B7FDD121F859CB700831B61 /* MockPhoto.swift */,
+				5B7FDD181F85BC9C00831B61 /* ViewConfig+Tests.swift */,
 			);
 			path = FlickrDemoTests;
 			sourceTree = "<group>";
@@ -572,6 +578,7 @@
 				5B1A00551F847DA100C08903 /* FlickrPhoto+PhotoDisplayable.swift in Sources */,
 				5B278E811F847335003E307B /* SwiftyJSON+Flickr.swift in Sources */,
 				5B278E681F831E21003E307B /* DefaultServer.swift in Sources */,
+				5B7FDD171F85BBBD00831B61 /* ViewConfig.swift in Sources */,
 				5B278E781F846263003E307B /* PublicFeedService.swift in Sources */,
 				5BB4B1D21F831A3700C71FE3 /* AppDelegate.swift in Sources */,
 				5B278E6C1F845F59003E307B /* Endpoint.swift in Sources */,
@@ -582,6 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7FDD191F85BC9D00831B61 /* ViewConfig+Tests.swift in Sources */,
 				5B278E851F847794003E307B /* FlickrPhotoTests.swift in Sources */,
 				5B7FDD111F85996200831B61 /* PublicFeedCoordinatorTests.swift in Sources */,
 				5B7FDCFF1F85889900831B61 /* URL+Tests.swift in Sources */,

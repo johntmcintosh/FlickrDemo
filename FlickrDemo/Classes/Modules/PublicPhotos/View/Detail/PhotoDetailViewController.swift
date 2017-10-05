@@ -16,7 +16,7 @@ class PhotoDetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
-            imageView.setImage(withURL: photo.large, asynchronous: animated)
+            imageView.setImage(withURL: photo.large, asynchronous: viewConfig.animated)
         }
     }
     
@@ -32,14 +32,14 @@ class PhotoDetailViewController: UIViewController {
     // MARK: Properties
     
     let photo: PhotoDisplayable
-    let animated: Bool
+    let viewConfig: ViewConfig
     
     
     // MARK: Initializers
     
-    init(photo: PhotoDisplayable, animated: Bool = true) {
+    init(photo: PhotoDisplayable, viewConfig: ViewConfig = .standard()) {
         self.photo = photo
-        self.animated = animated
+        self.viewConfig = viewConfig
         super.init(nibName: nil, bundle: nil)
     }
     

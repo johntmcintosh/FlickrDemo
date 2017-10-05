@@ -19,7 +19,7 @@ class FeedViewControllerTests: SnapshotKitTestCase {
     }
     
     func testBasic() {
-        let vc = FeedViewController(animated: false)
+        let vc = FeedViewController(viewConfig: .mock())
         let navC = UINavigationController(rootViewController: vc)
 
         vc.loadViewIfNeeded()
