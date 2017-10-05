@@ -63,4 +63,9 @@ extension PublicFeedCoordinator: FeedViewControllerDelegate {
     func didTriggerRefresh(in viewController: FeedViewController) {
         fetchPublicFeed()
     }
+    
+    func didSelect(photo: PhotoDisplayable, in viewController: FeedViewController) {
+        let vc = PhotoDetailViewController(photo: photo)
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

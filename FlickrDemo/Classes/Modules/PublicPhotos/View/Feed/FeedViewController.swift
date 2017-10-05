@@ -12,6 +12,7 @@ import UIKit
 protocol FeedViewControllerDelegate: class {
     
     func didTriggerRefresh(in viewController: FeedViewController)
+    func didSelect(photo: PhotoDisplayable, in viewController: FeedViewController)
 }
 
 
@@ -58,6 +59,7 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = NSLocalizedString("Public Flickr Feed", comment: "")
+        clearBackButtonTitle()
     }
 
     
@@ -120,5 +122,16 @@ extension FeedViewController: UICollectionViewDataSource {
 
 extension FeedViewController: UICollectionViewDelegate {
     
-    // TODO: Selection action
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = photos[indexPath.row]
+        delegate?.didSelect(photo: photo, in: self)
+    }
+}
+
+
+private extension FeedViewController {
+    
+    func clearBackButtonTitle() {
+        navigationItem.backBarButtonItem = UIBarButtonItem()
+    }
 }
