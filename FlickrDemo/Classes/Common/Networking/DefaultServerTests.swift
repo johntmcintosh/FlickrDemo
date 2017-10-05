@@ -75,6 +75,23 @@ class DefaultServerTests: XCTestCase {
         waitForExpectations(timeout: 1.0)
     }
     
+    func testResponseInvalidJSON() {
+        let url = URL(string: "https://api.flickr.com/endpoint")!
+        let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
+        
+        let responseBody = "{ malformed json }"
+        let data = responseBody.data(using: .utf8)!
+        TestURLProtocol.nextResponse = TestURLProtocol.Response.success(response, data)
+        
+        let expectation = self.expectation(description: "completion expectation")
+        server.get(to: "endpoint", parameters: nil) { result in
+            let error = result.error!
+            XCTAssertEqual(error.message, "Temporarily unable to parse the Flickr feed. Please pull-to-refresh to try again.")
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1.0)
+    }
+    
     func testResponseError() {
         let userInfo = [NSLocalizedDescriptionKey: "The Internet connection appears to be offline."]
         let offlineError = NSError(domain: "NSURLErrorDomain", code: -1099, userInfo: userInfo)

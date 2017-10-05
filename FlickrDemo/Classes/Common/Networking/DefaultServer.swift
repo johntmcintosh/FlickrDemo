@@ -67,7 +67,17 @@ class DefaultServer: Server {
                 return
             }
             
-            let response = ServerResponse(JSON(data))
+            var error: NSError?
+            let json = JSON(data: data, error: &error)
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    let message = NSLocalizedString("Temporarily unable to parse the Flickr feed. Please pull-to-refresh to try again.", comment: "")
+                    completion(.failure(ServerError(message)))
+                }
+                return
+            }
+            
+            let response = ServerResponse(json)
             DispatchQueue.main.async {
                 completion(.success(response))
             }
