@@ -24,10 +24,10 @@ class FeedViewControllerTests: SnapshotKitTestCase {
 
         vc.loadViewIfNeeded()
         vc.set(photos: [
-            MockPhoto(title: "Basic photo title", imageName: "sample-photo-landscape.jpg"),
-            MockPhoto(title: "Basic photo title", imageName: "sample-photo-portrait.jpg"),
-            MockPhoto(title: "Basic photo title", imageName: "sample-photo-landscape.jpg"),
-            MockPhoto(title: "Basic photo title", imageName: "sample-photo-portrait.jpg"),
+            MockPhoto(displayTitle: "Basic photo title", imageName: "sample-photo-landscape.jpg"),
+            MockPhoto(displayTitle: "Basic photo title", imageName: "sample-photo-portrait.jpg"),
+            MockPhoto(displayTitle: "Basic photo title", imageName: "sample-photo-landscape.jpg"),
+            MockPhoto(displayTitle: "Basic photo title", imageName: "sample-photo-portrait.jpg"),
         ])
 
         snapshot.simulator().verify(navC)

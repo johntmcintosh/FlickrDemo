@@ -12,7 +12,7 @@ import Foundation
 
 struct MockPhoto: PhotoDisplayable {
     
-    var title: String
+    var displayTitle: String
     
     var thumbnail: URL {
         return large
@@ -24,7 +24,7 @@ struct MockPhoto: PhotoDisplayable {
         return URL(testImageNamed: imageName)!
     }
     
-    var date: Date {
+    var displayDate: Date {
         return Date(timeIntervalSince1970: 0)
     }
 }
@@ -33,6 +33,6 @@ struct MockPhoto: PhotoDisplayable {
 extension MockPhoto {
     
     static func make() -> MockPhoto {
-        return MockPhoto(title: "Basic photo title", imageName: "sample-photo-landscape.jpg")
+        return MockPhoto(displayTitle: "Basic photo title", imageName: "sample-photo-landscape.jpg")
     }
 }

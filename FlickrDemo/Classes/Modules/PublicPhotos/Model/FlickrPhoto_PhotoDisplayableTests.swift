@@ -26,7 +26,7 @@ class FlickrPhoto_PhotoDisplayableTests: XCTestCase {
         let photo = FlickrPhoto.make(dateTaken: dateTaken, published: published)
         let displayable = photo as PhotoDisplayable
         
-        XCTAssertEqual(displayable.date, dateTaken)
+        XCTAssertEqual(displayable.displayDate, dateTaken)
     }
     
     func testLargeURLGeneration_validThumbnailURL() {

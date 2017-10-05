@@ -11,6 +11,10 @@ import Foundation
 
 extension FlickrPhoto: PhotoDisplayable {
 
+    var displayTitle: String {
+        return title.trimmingCharacters(in: .whitespaces)
+    }
+    
     var thumbnail: URL {
         return source
     }
@@ -34,7 +38,7 @@ extension FlickrPhoto: PhotoDisplayable {
         return large
     }
     
-    var date: Date {
+    var displayDate: Date {
         return dateTaken
     }
 }

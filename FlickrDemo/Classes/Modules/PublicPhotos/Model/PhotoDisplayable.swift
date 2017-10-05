@@ -11,8 +11,8 @@ import Foundation
 
 protocol PhotoDisplayable {
     
-    var title: String { get }
+    var displayTitle: String { get }
     var thumbnail: URL { get }
     var large: URL { get }
-    var date: Date { get }
+    var displayDate: Date { get }
 }
