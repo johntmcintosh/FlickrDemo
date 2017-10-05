@@ -27,12 +27,27 @@ class PhotoDetailViewController: UIViewController {
             titleLabel.text = photo.title
         }
     }
-    
+
+    @IBOutlet weak var dateLabel: UILabel! {
+        didSet {
+            dateLabel.text = formatter.string(from: photo.date)
+        }
+    }
+
     
     // MARK: Properties
     
     let photo: PhotoDisplayable
     let viewConfig: ViewConfig
+    
+    private lazy var formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = viewConfig.timeZone
+        formatter.locale = viewConfig.locale
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return formatter
+    }()
     
     
     // MARK: Initializers

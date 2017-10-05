@@ -21,14 +21,24 @@ class PhotoDetailViewControllerTests: SnapshotKitTestCase {
     func testLandscapePhotoLoaded() {
         let photo = MockPhoto(title: "Basic photo title", imageName: "sample-photo-landscape.jpg")
         let vc = PhotoDetailViewController(photo: photo, viewConfig: .mock())
+        let navC = UINavigationController(rootViewController: vc)
         
-        snapshot.simulator().verify(vc)
+        snapshot.simulator().verify(navC)
     }
 
     func testPortraitPhotoLoaded() {
         let photo = MockPhoto(title: "Basic photo title", imageName: "sample-photo-portrait.jpg")
         let vc = PhotoDetailViewController(photo: photo, viewConfig: .mock())
+        let navC = UINavigationController(rootViewController: vc)
         
-        snapshot.simulator().verify(vc)
+        snapshot.simulator().verify(navC)
+    }
+
+    func testMultilineTitle() {
+        let photo = MockPhoto(title: "Cras id massa non enim elementum dignissim ut in nisl. Morbi euismod porttitor nibh, eget scelerisque massa tempus et. Donec non ligula vel augue efficitur rhoncus.", imageName: "sample-photo-portrait.jpg")
+        let vc = PhotoDetailViewController(photo: photo, viewConfig: .mock())
+        let navC = UINavigationController(rootViewController: vc)
+        
+        snapshot.simulator().verify(navC)
     }
 }
