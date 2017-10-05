@@ -67,6 +67,10 @@ class PhotoDetailViewController: UIViewController {
     
     // MARK: Overrides
     
+    override var prefersStatusBarHidden: Bool {
+        return navigationController?.isNavigationBarHidden ?? false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addShowHideDetailsTapGesture()
@@ -88,6 +92,7 @@ class PhotoDetailViewController: UIViewController {
     @objc func viewTapped() {
         guard let isNavigationHidden = navigationController?.isNavigationBarHidden else { return }
         setDetailView(hidden: isNavigationHidden, animated: viewConfig.animated)
+        setNeedsStatusBarAppearanceUpdate()
     }
 }
 
